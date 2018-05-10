@@ -9,7 +9,7 @@ use phootwork\lang\Arrayable;
 use phootwork\lang\Text;
 use gossi\swagger\AbstractModel;
 
-class Responses extends AbstractModel implements Arrayable, \Iterator {
+class Responses extends AbstractModel implements Arrayable, \Iterator, \Countable {
 
 	use ExtensionPart;
 
@@ -128,4 +128,9 @@ class Responses extends AbstractModel implements Arrayable, \Iterator {
 	public function valid() {
 		return $this->responses->valid();
 	}
+	
+        public function count()
+        {
+            return sizeof($this->responses);
+        }
 }
